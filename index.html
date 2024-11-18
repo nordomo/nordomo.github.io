@@ -1,123 +1,248 @@
-<section id="experience">
-  <h2>Experience</h2>
-  <p>Click on the logos below to learn more about my professional experiences.</p>
-  
-  <!-- Experience Grid -->
-  <div class="experience-grid">
-    <!-- Adidas -->
-    <div class="experience-item" onclick="showExperience('adidas')">
-      <img src="adidas-logo.png" alt="Adidas Logo">
-    </div>
-    <!-- Jacobs Douwe Egberts -->
-    <div class="experience-item" onclick="showExperience('jde')">
-      <img src="jde-logo.png" alt="JDE Logo">
-    </div>
-    <!-- Activision Blizzard -->
-    <div class="experience-item" onclick="showExperience('activision')">
-      <img src="activision-logo.png" alt="Activision Blizzard Logo">
-    </div>
-    <!-- Alternatif Bank -->
-    <div class="experience-item" onclick="showExperience('alternatifbank')">
-      <img src="alternatifbank-logo.png" alt="Alternatif Bank Logo">
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tunga Mutlu</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Styling -->
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: #000; /* Fully black background */
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #00bfff;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #1ecaff;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #000; /* Fully black */
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #bbb;
+    }
+
+    .hero .cta {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #00bfff;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero .cta:hover {
+      background: #1ecaff;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00bfff;
+      letter-spacing: 0.1rem;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-bottom: 40px;
+    }
+
+    /* Experience Section */
+    .experience-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .experience-item img {
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .experience-item img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #experience-details {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    #experience-details h3 {
+      margin-top: 0;
+      color: #00bfff;
+    }
+
+    #experience-details.hidden {
+      display: none;
+    }
+
+    #experience-details button {
+      background: #00bfff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #experience-details button:hover {
+      background: #007bff;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #888;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #00bfff;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Tunga Mutlu</h1>
+    <p>Data Scientist | Marketing Strategist | Innovator</p>
+    <a href="#about" class="cta">Learn More</a>
   </div>
 
-  <!-- Experience Details -->
-  <div id="experience-details" class="hidden">
-    <h3 id="company-name"></h3>
-    <p id="company-description"></p>
-    <button onclick="hideExperience()">Close</button>
-  </div>
-</section>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a Data Science master's student at Erasmus University Rotterdam with a passion for solving complex problems using data and analytics. My work focuses on driving business growth and innovation through data-driven insights.</p>
+  </section>
 
-<!-- CSS Styling -->
-<style>
-  /* Experience Section */
-  .experience-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <p>Click on the logos below to learn more about my professional experiences.</p>
+    <div class="experience-grid">
+      <!-- Adidas -->
+      <div class="experience-item" onclick="showExperience('adidas')">
+        <img src="adidas-logo.png" alt="Adidas Logo">
+      </div>
+      <!-- Jacobs Douwe Egberts -->
+      <div class="experience-item" onclick="showExperience('jde')">
+        <img src="jde-logo.png" alt="JDE Logo">
+      </div>
+      <!-- Activision Blizzard -->
+      <div class="experience-item" onclick="showExperience('activision')">
+        <img src="activision-logo.png" alt="Activision Blizzard Logo">
+      </div>
+      <!-- Alternatif Bank -->
+      <div class="experience-item" onclick="showExperience('alternatifbank')">
+        <img src="alternatifbank-logo.png" alt="Alternatif Bank Logo">
+      </div>
+    </div>
 
-  .experience-item img {
-    width: 150px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+    <!-- Experience Details -->
+    <div id="experience-details" class="hidden">
+      <h3 id="company-name"></h3>
+      <p id="company-description"></p>
+      <button onclick="hideExperience()">Close</button>
+    </div>
+  </section>
 
-  .experience-item img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  }
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Tunga Mutlu | Designed with ❤️</p>
+  </footer>
 
-  #experience-details {
-    margin-top: 40px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.9);
-    color: white;
-    text-align: center;
-    border-radius: 10px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
-  }
+  <!-- JavaScript for Experience Section -->
+  <script>
+    const experiences = {
+      adidas: {
+        name: "adidas",
+        description: "As a Marketing Analytics Specialist at adidas, I optimized global marketing campaigns by leveraging data-driven insights, improving ROI across multiple regions.",
+      },
+      jde: {
+        name: "Jacobs Douwe Egberts",
+        description: "At JDE, I analyzed consumer behavior trends and developed predictive models to enhance coffee sales across multiple European markets.",
+      },
+      activision: {
+        name: "Activision Blizzard",
+        description: "During my time at Activision Blizzard, I led data analysis projects to optimize user engagement for AAA gaming titles, focusing on player retention.",
+      },
+      alternatifbank: {
+        name: "Alternatif Bank",
+        description: "As a Data Analyst at Alternatif Bank, I worked on financial modeling and provided insights to improve lending strategies and client acquisition.",
+      },
+    };
 
-  #experience-details h3 {
-    margin-top: 0;
-    color: #00bfff;
-  }
+    function showExperience(companyKey) {
+      const company = experiences[companyKey];
+      document.getElementById("company-name").innerText = company.name;
+      document.getElementById("company-description").innerText = company.description;
+      document.getElementById("experience-details").classList.remove("hidden");
+    }
 
-  #experience-details.hidden {
-    display: none;
-  }
-
-  #experience-details button {
-    background: #00bfff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-
-  #experience-details button:hover {
-    background: #007bff;
-  }
-</style>
-
-<!-- JavaScript for Interactivity -->
-<script>
-  const experiences = {
-    adidas: {
-      name: "adidas",
-      description: "As a Marketing Analytics Specialist at Adidas, I optimized global marketing campaigns by leveraging data-driven insights, improving ROI across multiple regions.",
-    },
-    jde: {
-      name: "Jacobs Douwe Egberts",
-      description: "At JDE, I analyzed consumer behavior trends and developed predictive models to enhance coffee sales across multiple European markets.",
-    },
-    activision: {
-      name: "Activision Blizzard",
-      description: "During my time at Activision Blizzard, I led data analysis projects to optimize user engagement for AAA gaming titles, focusing on player retention.",
-    },
-    alternatifbank: {
-      name: "Alternatif Bank",
-      description: "As a Data Analyst at Alternatif Bank, I worked on financial modeling and provided insights to improve lending strategies and client acquisition.",
-    },
-  };
-
-  function showExperience(companyKey) {
-    const company = experiences[companyKey];
-    document.getElementById("company-name").innerText = company.name;
-    document.getElementById("company-description").innerText = company.description;
-    document.getElementById("experience-details").classList.remove("hidden");
-  }
-
-  function hideExperience() {
-    document.getElementById("experience-details").classList.add("hidden");
-  }
-</script>
+    function hideExperience() {
+      document.getElementById("experience-details").classList.add("hidden");
+    }
+  </script>
+</body>
+</html>
