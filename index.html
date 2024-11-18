@@ -8,8 +8,9 @@
   <!-- Link to your main styles -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Animation styles -->
+  <!-- Inline styles for animation and background -->
   <style>
+    /* Animation for h1 */
     @keyframes neon {
       0%, 100% {
         text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 20px #ff0099;
@@ -19,8 +20,51 @@
       }
     }
 
+    /* Set the image as a full-page background */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100%;
+      background: url('rotterdam-skyline-pixel.png') no-repeat center center fixed;
+      background-size: cover; /* Ensures the image covers the entire screen */
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* Header styling */
+    header {
+      text-align: center;
+      padding-top: 20vh; /* Pushes the content down a bit */
+    }
+
     h1 {
       animation: neon 1.5s infinite alternate;
+      font-size: 3em;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.2em;
+      text-shadow: 1px 1px 5px black;
+    }
+
+    /* Navigation styling */
+    nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2em;
+      text-shadow: 1px 1px 5px black;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 10px #ff0099;
     }
   </style>
 </head>
@@ -36,34 +80,5 @@
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>A short intro about who you are and your journey.</p>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <ul>
-      <li><strong>Data Science Master's Student</strong> at Erasmus University Rotterdam</li>
-      <li><strong>Performance Marketing Experience</strong></li>
-      <li><strong>adidas</strong> - Previous role</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Highlight a few key projects with links or visuals.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:tungamutlu@gmail.com">tunga@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/tkmutlu/" target="_blank">Tunga Mutlu</a></p>
-  </section>
-
-  <footer>
-    <p>Made by TKM</p>
-  </footer>
 </body>
 </html>
