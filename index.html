@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tunga Mutlu | MSc Data Science Student">
+  <meta name="description" content="Tunga Mutlu | MSc Data Science Student | Career Page">
   <meta name="author" content="Tunga Mutlu">
-  <meta property="og:title" content="Tunga Mutlu">
-  <meta property="og:description" content="Explore my professional journey, experience, and projects.">
-  <meta property="og:type" content="website">
   <title>Tunga Mutlu</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
+  <!-- Styling -->
   <style>
     /* General Styles */
     body {
@@ -21,6 +19,7 @@
       font-family: 'Inter', sans-serif;
       background: #000; /* Dark background */
       color: #fff;
+      overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
@@ -46,17 +45,19 @@
     }
 
     .hero h1 {
-      font-size: 5rem;
+      font-size: 6rem;
       font-weight: 700;
       font-family: 'Orbitron', sans-serif;
       color: #fff;
       margin: 0;
+      animation: fadeIn 2s ease-in-out;
     }
 
     .hero p {
       font-size: 2rem;
       color: #ff5500;
-      margin: 10px 0 0;
+      margin: 20px 0 0;
+      animation: fadeIn 3s ease-in-out;
     }
 
     /* Scroll Indicator */
@@ -67,6 +68,7 @@
       color: #aaa;
       text-transform: uppercase;
       letter-spacing: 0.1rem;
+      animation: fadeIn 4s ease-in-out;
     }
 
     .scroll-down::after {
@@ -76,35 +78,18 @@
       margin-top: 5px;
     }
 
-    /* Section Styling */
-    section {
-      height: 100vh;
-      padding: 50px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    section:nth-child(2n) {
-      background: #111; /* Alternate section background */
-    }
-
-    section h2 {
-      font-size: 3rem;
-      font-family: 'Orbitron', sans-serif;
-      color: #ff5500;
-      margin-bottom: 20px;
-    }
-
-    section p {
-      font-size: 1.2rem;
-      color: #bbb;
-      max-width: 800px;
-    }
-
-    /* Menu Button */
+    /* Navigation Menu */
     .menu {
       position: fixed;
       top: 20px;
@@ -129,37 +114,108 @@
       color: #fff;
     }
 
-    /* Projects Section */
-    .projects-grid {
+    .menu-content {
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.95);
+      padding: 20px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .menu:hover .menu-content {
+      display: block;
+    }
+
+    .menu-content a {
+      display: block;
+      color: #00bfff;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .menu-content a:hover {
+      color: #1ecaff;
+    }
+
+    /* Sections */
+    section {
+      height: 100vh;
+      padding: 50px;
+      text-align: center;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section h2 {
+      font-size: 3rem;
+      font-family: 'Orbitron', sans-serif;
+      color: #ff5500;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      color: #bbb;
+      max-width: 800px;
+    }
+
+    /* Experience Section */
+    .experience-grid {
+      display: flex;
       justify-content: center;
       gap: 30px;
+      flex-wrap: wrap;
     }
 
-    .project-item {
-      background: #111;
+    .experience-item img {
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .experience-item img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #experience-details {
+      margin-top: 40px;
       padding: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      text-align: center;
       border-radius: 10px;
-      text-align: left;
-      max-width: 300px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
     }
 
-    .project-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.9);
+    #experience-details.hidden {
+      display: none;
     }
 
-    .project-item h3 {
-      font-size: 1.5rem;
-      margin: 0 0 10px;
-      color: #ff5500;
+    #experience-details h3 {
+      margin-top: 0;
+      color: #00bfff;
     }
 
-    .project-item p {
-      font-size: 1rem;
-      color: #bbb;
+    #experience-details button {
+      background: #00bfff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #experience-details button:hover {
+      background: #007bff;
     }
 
     /* Footer */
@@ -184,6 +240,12 @@
   <!-- Menu -->
   <div class="menu">
     <button class="menu-button">Menu</button>
+    <div class="menu-content">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 
   <!-- Hero Section -->
@@ -204,47 +266,41 @@
   <!-- Experience Section -->
   <section id="experience">
     <h2>Experience</h2>
-    <p>
-      I have worked with global companies such as Adidas, Jacobs Douwe Egberts, and Activision Blizzard, driving data analytics and performance optimization initiatives.
-    </p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-item">
-        <h3>Churn Prediction</h3>
-        <p>
-          Developed a machine learning model to predict customer churn and recommend retention strategies.
-        </p>
+    <p>Click on the logos below to learn more about my professional experiences.</p>
+    <div class="experience-grid">
+      <div class="experience-item" onclick="showExperience('adidas')">
+        <img src="adidas-logo.png" alt="Adidas Logo">
       </div>
-      <div class="project-item">
-        <h3>Market Basket Analysis</h3>
-        <p>
-          Conducted transactional data analysis to enhance product bundling and placement strategies.
-        </p>
+      <div class="experience-item" onclick="showExperience('jde')">
+        <img src="jde-logo.png" alt="JDE Logo">
       </div>
-      <div class="project-item">
-        <h3>Marketing Dashboard</h3>
-        <p>
-          Designed an interactive dashboard to track marketing campaign performance in real time.
-        </p>
+      <div class="experience-item" onclick="showExperience('activision')">
+        <img src="activision-logo.png" alt="Activision Blizzard Logo">
+      </div>
+      <div class="experience-item" onclick="showExperience('alternatifbank')">
+        <img src="alternatifbank-logo.png" alt="Alternatif Bank Logo">
       </div>
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      Reach out via email at <a href="mailto:tungamutlu@gmail.com">tungamutlu@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/tkmutlu/" target="_blank">LinkedIn</a>.
-    </p>
+    <div id="experience-details" class="hidden">
+      <h3 id="company-name"></h3>
+      <p id="company-description"></p>
+      <button onclick="hideExperience()">Close</button>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2024 Tunga Mutlu | Built with ❤️</p>
+    <p>© 2024 Tunga Mutlu | Designed with ❤️</p>
   </footer>
-</body>
-</html>
+
+  <!-- JavaScript -->
+  <script>
+    const experiences = {
+      adidas: { name: "Adidas", description: "Marketing Analytics Specialist: Optimized campaigns." },
+      jde: { name: "Jacobs Douwe Egberts", description: "Analyzed trends to improve sales." },
+      activision: { name: "Activision Blizzard", description: "Player retention projects." },
+      alternatifbank: { name: "Alternatif Bank", description: "Financial modeling and insights." },
+    };
+
+   
