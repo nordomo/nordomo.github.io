@@ -1,185 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tunga Mutlu</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Inline CSS for Styling -->
-  <style>
-    /* General Styles */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      color: #fff;
-      background: #000; /* Dark background */
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: #00bfff; /* Neon blue for links */
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #1ecaff;
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: url('rotterdam-skyline-pixel.png') no-repeat center center / cover;
-      background-attachment: fixed;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 4rem;
-      font-weight: 600;
-      letter-spacing: 0.1rem;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-    }
-
-    .hero p {
-      font-size: 1.5rem;
-      margin-top: 10px;
-      color: #bbb;
-    }
-
-    .hero .cta {
-      margin-top: 20px;
-      padding: 12px 30px;
-      background: #00bfff;
-      color: #fff;
-      font-weight: 600;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    .hero .cta:hover {
-      background: #1ecaff;
-    }
-
-    /* Section Styling */
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #00bfff;
-      letter-spacing: 0.1rem;
-    }
-
-    section p {
-      font-size: 1.2rem;
-      color: #aaa;
-      margin-bottom: 40px;
-    }
-
-    /* Experience Section */
-    .experience {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-
-    .experience-item {
-      width: 300px;
-      background: #111;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
-      text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .experience-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.9);
-    }
-
-    .experience-item h3 {
-      color: #00bfff;
-      margin-bottom: 10px;
-    }
-
-    .experience-item img {
-      width: 100px;
-      margin-bottom: 15px;
-    }
-
-    /* Footer */
-    footer {
-      background: #111;
-      color: #888;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #00bfff;
-    }
-  </style>
-</head>
-<body>
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>Tunga Mutlu</h1>
-    <p>Data Scientist | Marketing Strategist | Innovator</p>
-    <a href="#about" class="cta">Learn More</a>
+<section id="experience">
+  <h2>Experience</h2>
+  <p>Click on the logos below to learn more about my professional experiences.</p>
+  
+  <!-- Experience Grid -->
+  <div class="experience-grid">
+    <!-- Adidas -->
+    <div class="experience-item" onclick="showExperience('adidas')">
+      <img src="adidas-logo.png" alt="Adidas Logo">
+    </div>
+    <!-- Jacobs Douwe Egberts -->
+    <div class="experience-item" onclick="showExperience('jde')">
+      <img src="jde-logo.png" alt="JDE Logo">
+    </div>
+    <!-- Activision Blizzard -->
+    <div class="experience-item" onclick="showExperience('activision')">
+      <img src="activision-logo.png" alt="Activision Blizzard Logo">
+    </div>
+    <!-- Alternatif Bank -->
+    <div class="experience-item" onclick="showExperience('alternatifbank')">
+      <img src="alternatifbank-logo.png" alt="Alternatif Bank Logo">
+    </div>
   </div>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a Data Science master's student at Erasmus University Rotterdam with a passion for solving complex problems using data and analytics. My work focuses on driving business growth and innovation through data-driven insights.</p>
-  </section>
+  <!-- Experience Details -->
+  <div id="experience-details" class="hidden">
+    <h3 id="company-name"></h3>
+    <p id="company-description"></p>
+    <button onclick="hideExperience()">Close</button>
+  </div>
+</section>
 
-  <!-- Experience Section -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience">
-      <!-- Adidas -->
-      <div class="experience-item">
-        <img src="adidas-logo.png" alt="Adidas Logo">
-        <h3>Adidas</h3>
-        <p>Marketing Analytics Specialist: Optimized global campaigns using performance data.</p>
-      </div>
-      <!-- Google -->
-      <div class="experience-item">
-        <img src="google-logo.png" alt="Google Logo">
-        <h3>Google</h3>
-        <p>Performance Marketing Intern: Designed A/B tests and analytics reports for clients.</p>
-      </div>
-      <!-- Erasmus University -->
-      <div class="experience-item">
-        <img src="erasmus-logo.png" alt="Erasmus University Logo">
-        <h3>Erasmus University</h3>
-        <p>Data Science Research Assistant: Conducted predictive modeling research for marketing.</p>
-      </div>
-    </div>
-  </section>
+<!-- CSS Styling -->
+<style>
+  /* Experience Section */
+  .experience-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2024 Tunga Mutlu | Designed with ❤️ in Rotterdam</p>
-  </footer>
-</body>
-</html>
+  .experience-item img {
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .experience-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  #experience-details {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+  }
+
+  #experience-details h3 {
+    margin-top: 0;
+    color: #00bfff;
+  }
+
+  #experience-details.hidden {
+    display: none;
+  }
+
+  #experience-details button {
+    background: #00bfff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  #experience-details button:hover {
+    background: #007bff;
+  }
+</style>
+
+<!-- JavaScript for Interactivity -->
+<script>
+  const experiences = {
+    adidas: {
+      name: "adidas",
+      description: "As a Marketing Analytics Specialist at Adidas, I optimized global marketing campaigns by leveraging data-driven insights, improving ROI across multiple regions.",
+    },
+    jde: {
+      name: "Jacobs Douwe Egberts",
+      description: "At JDE, I analyzed consumer behavior trends and developed predictive models to enhance coffee sales across multiple European markets.",
+    },
+    activision: {
+      name: "Activision Blizzard",
+      description: "During my time at Activision Blizzard, I led data analysis projects to optimize user engagement for AAA gaming titles, focusing on player retention.",
+    },
+    alternatifbank: {
+      name: "Alternatif Bank",
+      description: "As a Data Analyst at Alternatif Bank, I worked on financial modeling and provided insights to improve lending strategies and client acquisition.",
+    },
+  };
+
+  function showExperience(companyKey) {
+    const company = experiences[companyKey];
+    document.getElementById("company-name").innerText = company.name;
+    document.getElementById("company-description").innerText = company.description;
+    document.getElementById("experience-details").classList.remove("hidden");
+  }
+
+  function hideExperience() {
+    document.getElementById("experience-details").classList.add("hidden");
+  }
+</script>
