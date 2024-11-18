@@ -1,0 +1,60 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background: url('rotterdam-skyline-pixel.png') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire screen */
+    font-family: Arial, sans-serif; /* Add a clean, readable font */
+    color: white; /* Text color stands out on the background */
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #333;
+    color: #fff;
+    border-bottom: 5px solid #ff0099; /* Neon border */
+  }
+  
+  /* Navigation */
+  nav {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #ff0099, #4939ff);
+    padding: 10px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-shadow: 0 0 5px #ff0099;
+  }
+  
+  /* Sections */
+  section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #ff0099;
+    text-shadow: 0 0 5px #ff0099;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+  }
+  
