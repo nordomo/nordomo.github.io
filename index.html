@@ -17,7 +17,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      background: #000; /* Dark background */
+      background: linear-gradient(180deg, #000, #111);
       color: #fff;
       overflow-x: hidden;
       scroll-behavior: smooth;
@@ -33,7 +33,7 @@
       color: #ff7700;
     }
 
-    /* Hero Section */
+    /* Hero Section with Animated Background */
     .hero {
       height: 100vh;
       display: flex;
@@ -42,6 +42,14 @@
       justify-content: center;
       text-align: center;
       position: relative;
+      background: linear-gradient(120deg, #000, #111, #222);
+      animation: gradientAnimation 8s infinite alternate;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .hero h1 {
@@ -89,57 +97,6 @@
       }
     }
 
-    /* Navigation Menu */
-    .menu {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-
-    .menu-button {
-      font-size: 1rem;
-      text-transform: uppercase;
-      color: #ff5500;
-      background: none;
-      border: 2px solid #ff5500;
-      padding: 10px 20px;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .menu-button:hover {
-      background: #ff5500;
-      color: #fff;
-    }
-
-    .menu-content {
-      position: fixed;
-      top: 70px;
-      right: 20px;
-      background: rgba(0, 0, 0, 0.95);
-      padding: 20px;
-      border-radius: 8px;
-      display: none;
-    }
-
-    .menu:hover .menu-content {
-      display: block;
-    }
-
-    .menu-content a {
-      display: block;
-      color: #00bfff;
-      margin-bottom: 10px;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-
-    .menu-content a:hover {
-      color: #1ecaff;
-    }
-
     /* Sections */
     section {
       height: 100vh;
@@ -149,6 +106,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    section:nth-child(2n) {
+      background: linear-gradient(120deg, #111, #222);
     }
 
     section h2 {
@@ -237,17 +198,6 @@
   </style>
 </head>
 <body>
-  <!-- Menu -->
-  <div class="menu">
-    <button class="menu-button">Menu</button>
-    <div class="menu-content">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-
   <!-- Hero Section -->
   <div class="hero">
     <h1>Tunga Mutlu</h1>
@@ -294,7 +244,6 @@
     <p>© 2024 Tunga Mutlu | Designed with ❤️</p>
   </footer>
 
-  <!-- JavaScript -->
   <script>
     const experiences = {
       adidas: { name: "Adidas", description: "Marketing Analytics Specialist: Optimized campaigns." },
@@ -303,4 +252,16 @@
       alternatifbank: { name: "Alternatif Bank", description: "Financial modeling and insights." },
     };
 
-   
+    function showExperience(companyKey) {
+      const company = experiences[companyKey];
+      document.getElementById("company-name").innerText = company.name;
+      document.getElementById("company-description").innerText = company.description;
+      document.getElementById("experience-details").classList.remove("hidden");
+    }
+
+    function hideExperience() {
+      document.getElementById("experience-details").classList.add("hidden");
+    }
+  </script>
+</body>
+</html>
