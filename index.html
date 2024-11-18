@@ -6,23 +6,28 @@
   <title>Tunga Mutlu</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- CSS for Aesthetic and Animations -->
+  <!-- Inline CSS for Styling -->
   <style>
     /* General Styles */
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
       color: #fff;
-      background: #000; /* Black background for dark mode */
-      line-height: 1.6;
+      background: #000; /* Dark background */
+      overflow-x: hidden;
     }
 
-    /* Smooth Scroll */
-    html {
-      scroll-behavior: smooth;
+    a {
+      text-decoration: none;
+      color: #00bfff; /* Neon blue for links */
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #1ecaff;
     }
 
     /* Hero Section */
@@ -33,61 +38,36 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1)), url('rotterdam-skyline-pixel.png') no-repeat center center / cover;
+      background: url('rotterdam-skyline-pixel.png') no-repeat center center / cover;
+      background-attachment: fixed;
+      color: white;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       font-weight: 600;
-      margin-bottom: 10px;
-      color: #f7f7f7;
+      letter-spacing: 0.1rem;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     }
 
     .hero p {
-      font-size: 1.2rem;
-      font-weight: 300;
+      font-size: 1.5rem;
+      margin-top: 10px;
       color: #bbb;
-      margin-bottom: 20px;
     }
 
-    .hero a {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #007bff;
+    .hero .cta {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #00bfff;
       color: #fff;
       font-weight: 600;
-      text-decoration: none;
       border-radius: 5px;
       transition: background-color 0.3s ease;
     }
 
-    .hero a:hover {
-      background: #0056b3;
-    }
-
-    /* Navigation Bar */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 15px 20px;
-      display: flex;
-      justify-content: center;
-      z-index: 1000;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: #bbb;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #fff;
+    .hero .cta:hover {
+      background: #1ecaff;
     }
 
     /* Section Styling */
@@ -99,133 +79,107 @@
     }
 
     section h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 20px;
-      color: #fff;
+      color: #00bfff;
+      letter-spacing: 0.1rem;
     }
 
     section p {
-      font-size: 1.1rem;
-      color: #bbb;
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-bottom: 40px;
     }
 
-    /* Grid for Experience and Projects */
-    .grid {
+    /* Experience Section */
+    .experience {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px;
       justify-content: center;
     }
 
-    .card {
+    .experience-item {
+      width: 300px;
       background: #111;
       padding: 20px;
       border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
       text-align: left;
-      color: #fff;
-      max-width: 300px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card:hover {
+    .experience-item:hover {
       transform: translateY(-5px);
-      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.8);
+      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.9);
     }
 
-    .card h3 {
-      color: #007bff;
+    .experience-item h3 {
+      color: #00bfff;
+      margin-bottom: 10px;
+    }
+
+    .experience-item img {
+      width: 100px;
+      margin-bottom: 15px;
     }
 
     /* Footer */
     footer {
       background: #111;
-      color: #bbb;
-      text-align: center;
+      color: #888;
       padding: 20px;
+      text-align: center;
       font-size: 0.9rem;
     }
 
     footer a {
-      color: #007bff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+      color: #00bfff;
     }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <!-- Hero Section -->
   <div class="hero">
     <h1>Tunga Mutlu</h1>
-    <p>Data Scientist | Marketing Expert | Problem Solver</p>
-    <a href="#about">Learn More</a>
+    <p>Data Scientist | Marketing Strategist | Innovator</p>
+    <a href="#about" class="cta">Learn More</a>
   </div>
 
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a Data Science master's student at Erasmus University Rotterdam with a background in economics and marketing analytics. I specialize in solving complex problems and driving business value through data.</p>
+    <p>I am a Data Science master's student at Erasmus University Rotterdam with a passion for solving complex problems using data and analytics. My work focuses on driving business growth and innovation through data-driven insights.</p>
   </section>
 
   <!-- Experience Section -->
   <section id="experience">
     <h2>Experience</h2>
-    <div class="grid">
-      <div class="card">
+    <div class="experience">
+      <!-- Adidas -->
+      <div class="experience-item">
+        <img src="adidas-logo.png" alt="Adidas Logo">
         <h3>Adidas</h3>
-        <p>Marketing Analytics Specialist: Leveraged data-driven insights to optimize global campaigns.</p>
+        <p>Marketing Analytics Specialist: Optimized global campaigns using performance data.</p>
       </div>
-      <div class="card">
+      <!-- Google -->
+      <div class="experience-item">
+        <img src="google-logo.png" alt="Google Logo">
         <h3>Google</h3>
-        <p>Performance Marketing Intern: Enhanced marketing performance through A/B testing and analytics.</p>
+        <p>Performance Marketing Intern: Designed A/B tests and analytics reports for clients.</p>
       </div>
-      <div class="card">
+      <!-- Erasmus University -->
+      <div class="experience-item">
+        <img src="erasmus-logo.png" alt="Erasmus University Logo">
         <h3>Erasmus University</h3>
-        <p>Research Assistant: Conducted data science research on predictive models for business applications.</p>
+        <p>Data Science Research Assistant: Conducted predictive modeling research for marketing.</p>
       </div>
     </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Churn Prediction</h3>
-        <p>Built machine learning models to identify customer churn and optimize retention strategies.</p>
-      </div>
-      <div class="card">
-        <h3>Market Basket Analysis</h3>
-        <p>Analyzed transactional data to improve product placement and bundling strategies.</p>
-      </div>
-      <div class="card">
-        <h3>Marketing Dashboards</h3>
-        <p>Designed interactive dashboards to visualize marketing campaign performance.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:tungamutlu@gmail.com">tungamutlu@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/tkmutlu/" target="_blank">linkedin.com/in/tkmutlu</a></p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2024 Tunga Mutlu | Built with ❤️ in Rotterdam</p>
+    <p>© 2024 Tunga Mutlu | Designed with ❤️ in Rotterdam</p>
   </footer>
 </body>
 </html>
