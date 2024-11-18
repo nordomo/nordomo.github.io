@@ -4,13 +4,125 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tunga Mutlu</title>
-
-  <!-- Link to your main styles -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Inline styles for animation and background -->
   <style>
-    /* Animation for h1 */
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100%;
+      background: url('rotterdam-skyline-pixel.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* Header styling */
+    header {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 4em;
+      margin: 0;
+      animation: neon 1.5s infinite alternate;
+      color: #ff0099;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #fff;
+      margin: 10px 0 0;
+    }
+
+    /* Navigation styling */
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2em;
+      text-shadow: 0 0 5px black;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff0099;
+      text-shadow: 0 0 10px #ff0099;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      font-size: 1em;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-shadow: 0 0 5px black;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer p:hover {
+      color: #ff0099;
+      text-shadow: 0 0 10px #ff0099;
+    }
+
+    /* Background star animation */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+      animation: shimmer 10s infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      nav a {
+        font-size: 1em;
+      }
+    }
+
+    /* Neon animation */
     @keyframes neon {
       0%, 100% {
         text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 20px #ff0099;
@@ -18,53 +130,6 @@
       50% {
         text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 50px #ff00ff;
       }
-    }
-
-    /* Set the image as a full-page background */
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      width: 100%;
-      background: url('rotterdam-skyline-pixel.png') no-repeat center center fixed;
-      background-size: cover; /* Ensures the image covers the entire screen */
-      font-family: Arial, sans-serif;
-      color: white;
-    }
-
-    /* Header styling */
-    header {
-      text-align: center;
-      padding-top: 20vh; /* Pushes the content down a bit */
-    }
-
-    h1 {
-      animation: neon 1.5s infinite alternate;
-      font-size: 3em;
-      margin: 0;
-    }
-
-    p {
-      font-size: 1.2em;
-      text-shadow: 1px 1px 5px black;
-    }
-
-    /* Navigation styling */
-    nav {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1.2em;
-      text-shadow: 1px 1px 5px black;
-    }
-
-    nav a:hover {
-      text-shadow: 0 0 10px #ff0099;
     }
   </style>
 </head>
@@ -80,5 +145,9 @@
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
+
+  <footer>
+    <p>Made by TKM</p>
+  </footer>
 </body>
 </html>
